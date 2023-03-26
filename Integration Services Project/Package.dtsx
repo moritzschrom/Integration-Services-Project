@@ -1,0 +1,1744 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="3/26/2023 8:30:51 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-P08T88H"
+  DTS:CreatorName="DESKTOP-P08T88H\gschrom"
+  DTS:DTSID="{59015424-B436-4A44-A2AB-187A486DEC68}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5035.3"
+  DTS:LocaleID="3079"
+  DTS:ObjectName="Package"
+  DTS:PackageType="5"
+  DTS:VersionBuild="25"
+  DTS:VersionGUID="{6C5C0FEA-890E-4CA3-902D-0D44D4D968B2}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-P08T88H.rossmann]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{E3B41021-7B21-4A48-8888-242590BEDCE6}"
+      DTS:ObjectName="DESKTOP-P08T88H.rossmann">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-P08T88H;Initial Catalog=rossmann;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Package-{E3B41021-7B21-4A48-8888-242590BEDCE6}DESKTOP-P08T88H.rossmann;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[store.csv Connection Manager]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{CC6096AE-78AA-40EA-B357-8EE998A4F2A9}"
+      DTS:ObjectName="store.csv Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="3079"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x0022_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\gschrom\source\repos\Integration Services Project\store.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Store"
+              DTS:DTSID="{B4E29EF0-E5EB-4EBC-9908-EB7A069109DF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="1"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="StoreType"
+              DTS:DTSID="{E9BA5922-B343-4EDC-8C5E-9A054F6E07A3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="1"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Assortment"
+              DTS:DTSID="{A5F651F8-D4E5-4FC9-BF10-BB816E5583D5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CompetitionDistance"
+              DTS:DTSID="{499BDB7E-88BD-4CA7-A566-8418CC676032}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="16"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CompetitionOpenSinceMonth"
+              DTS:DTSID="{FACF8493-7675-43E8-B3FC-CCB49A06329A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CompetitionOpenSinceYear"
+              DTS:DTSID="{7C91F0F3-DCDF-4571-B10A-F2FCBABE5262}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="16"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Promo2"
+              DTS:DTSID="{C43A0DB9-398F-47DD-9685-AC9B8E0209EB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="16"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Promo2SinceWeek"
+              DTS:DTSID="{50D3470A-C545-41A7-A3D8-8DD0E57A0F45}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Promo2SinceYear"
+              DTS:DTSID="{215BBE17-5D5D-4FF8-89EE-538ADD14B0F6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000A_"
+              DTS:MaximumWidth="16"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PromoInterval"
+              DTS:DTSID="{DCDC9049-32C3-4E26-827C-829873C6DE29}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[train.csv Connection Manager]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{405AAADC-0DB5-48E4-8592-BA610CE92F93}"
+      DTS:ObjectName="train.csv Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="3079"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x0022_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\gschrom\source\repos\Integration Services Project\train.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Store"
+              DTS:DTSID="{3C302B48-30D8-41B4-A21A-CCA69BECDC4E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="16"
+              DTS:TextQualified="True"
+              DTS:ObjectName="DayOfWeek"
+              DTS:DTSID="{0C75504F-83F0-4F84-AB1C-C0DDF61C470A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="7"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Date"
+              DTS:DTSID="{C9148853-DD27-4862-A5F7-460B379CD7A8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="20"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Sales"
+              DTS:DTSID="{4895235E-C8E4-413B-9E6D-474A2F04044F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Customers"
+              DTS:DTSID="{B7F45802-E626-4C1F-8D83-5162FB21DAFE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="16"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Open"
+              DTS:DTSID="{681CD1B2-0909-46EA-9DC0-02B2CC258364}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="16"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Promo"
+              DTS:DTSID="{CEC2EBCF-2011-4445-A515-481AA3DB8F72}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="StateHoliday"
+              DTS:DTSID="{BF0D46C9-0788-402C-B008-49967E1B9EEE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000A_"
+              DTS:DataType="16"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SchoolHoliday"
+              DTS:DTSID="{C7F006C8-C66E-47B4-A897-FF9F5A4C21A6}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\EXTRACT"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequenzcontainer"
+      DTS:DTSID="{3EE6E750-F0C5-4551-A723-CA0D42F0353B}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="EXTRACT">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\EXTRACT\Source Store"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Datenflusstask"
+          DTS:DTSID="{7A4E1D04-8F5D-44C6-AE4F-67A31331B172}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Source Store"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\EXTRACT\Source Store\Flatfilequelle"
+                  componentClassID="Microsoft.FlatFileSource"
+                  contactInfo="Flatfilequelle;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Alle Rechte vorbehalten; http://www.microsoft.com/sql/support;1"
+                  description="Flatfilequelle"
+                  localeId="3079"
+                  name="Flatfilequelle"
+                  usesDispositions="true"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Gibt an, ob Spalten mit der Länge &quot;0&quot; als NULL behandelt werden."
+                      name="RetainNulls">true</property>
+                    <property
+                      dataType="System.String"
+                      description="Gibt den Namen der Ausgabespalte an, die den Dateinamen enthält. Wenn kein Name angegeben wird, wird keine Ausgabespalte generiert, die den Dateinamen enthält."
+                      name="FileNameColumnName"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\EXTRACT\Source Store\Flatfilequelle.Connections[FlatFileConnection]"
+                      connectionManagerID="Package.ConnectionManagers[store.csv Connection Manager]"
+                      connectionManagerRefId="Package.ConnectionManagers[store.csv Connection Manager]"
+                      name="FlatFileConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\EXTRACT\Source Store\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle]"
+                      name="Ausgabe der Flatfilequelle">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\EXTRACT\Source Store\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].Columns[Store]"
+                          dataType="i2"
+                          errorOrTruncationOperation="Konvertierung"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\EXTRACT\Source Store\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[Store]"
+                          lineageId="Package\EXTRACT\Source Store\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].Columns[Store]"
+                          name="Store"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Zeigt an, ob die Spalte die schnelleren gebietsschemaneutralen Analyseroutinen verwendet."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Gibt an, ob die Daten im Binärformat sind."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\EXTRACT\Source Store\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].Columns[StoreType]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Konvertierung"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\EXTRACT\Source Store\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[StoreType]"
+                          length="1"
+                          lineageId="Package\EXTRACT\Source Store\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].Columns[StoreType]"
+                          name="StoreType"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Zeigt an, ob die Spalte die schnelleren gebietsschemaneutralen Analyseroutinen verwendet."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Gibt an, ob die Daten im Binärformat sind."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\EXTRACT\Source Store\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].Columns[Assortment]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Konvertierung"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\EXTRACT\Source Store\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[Assortment]"
+                          length="1"
+                          lineageId="Package\EXTRACT\Source Store\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].Columns[Assortment]"
+                          name="Assortment"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Zeigt an, ob die Spalte die schnelleren gebietsschemaneutralen Analyseroutinen verwendet."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Gibt an, ob die Daten im Binärformat sind."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\EXTRACT\Source Store\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].Columns[CompetitionDistance]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Konvertierung"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\EXTRACT\Source Store\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[CompetitionDistance]"
+                          lineageId="Package\EXTRACT\Source Store\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].Columns[CompetitionDistance]"
+                          name="CompetitionDistance"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Zeigt an, ob die Spalte die schnelleren gebietsschemaneutralen Analyseroutinen verwendet."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Gibt an, ob die Daten im Binärformat sind."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\EXTRACT\Source Store\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].Columns[CompetitionOpenSinceMonth]"
+                          dataType="i1"
+                          errorOrTruncationOperation="Konvertierung"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\EXTRACT\Source Store\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[CompetitionOpenSinceMonth]"
+                          lineageId="Package\EXTRACT\Source Store\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].Columns[CompetitionOpenSinceMonth]"
+                          name="CompetitionOpenSinceMonth"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Zeigt an, ob die Spalte die schnelleren gebietsschemaneutralen Analyseroutinen verwendet."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Gibt an, ob die Daten im Binärformat sind."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\EXTRACT\Source Store\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].Columns[CompetitionOpenSinceYear]"
+                          dataType="i2"
+                          errorOrTruncationOperation="Konvertierung"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\EXTRACT\Source Store\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[CompetitionOpenSinceYear]"
+                          lineageId="Package\EXTRACT\Source Store\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].Columns[CompetitionOpenSinceYear]"
+                          name="CompetitionOpenSinceYear"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Zeigt an, ob die Spalte die schnelleren gebietsschemaneutralen Analyseroutinen verwendet."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Gibt an, ob die Daten im Binärformat sind."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\EXTRACT\Source Store\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].Columns[Promo2]"
+                          dataType="i1"
+                          errorOrTruncationOperation="Konvertierung"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\EXTRACT\Source Store\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[Promo2]"
+                          lineageId="Package\EXTRACT\Source Store\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].Columns[Promo2]"
+                          name="Promo2"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Zeigt an, ob die Spalte die schnelleren gebietsschemaneutralen Analyseroutinen verwendet."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Gibt an, ob die Daten im Binärformat sind."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\EXTRACT\Source Store\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].Columns[Promo2SinceWeek]"
+                          dataType="i1"
+                          errorOrTruncationOperation="Konvertierung"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\EXTRACT\Source Store\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[Promo2SinceWeek]"
+                          lineageId="Package\EXTRACT\Source Store\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].Columns[Promo2SinceWeek]"
+                          name="Promo2SinceWeek"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Zeigt an, ob die Spalte die schnelleren gebietsschemaneutralen Analyseroutinen verwendet."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Gibt an, ob die Daten im Binärformat sind."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\EXTRACT\Source Store\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].Columns[Promo2SinceYear]"
+                          dataType="i2"
+                          errorOrTruncationOperation="Konvertierung"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\EXTRACT\Source Store\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[Promo2SinceYear]"
+                          lineageId="Package\EXTRACT\Source Store\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].Columns[Promo2SinceYear]"
+                          name="Promo2SinceYear"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Zeigt an, ob die Spalte die schnelleren gebietsschemaneutralen Analyseroutinen verwendet."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Gibt an, ob die Daten im Binärformat sind."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\EXTRACT\Source Store\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].Columns[PromoInterval]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Konvertierung"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\EXTRACT\Source Store\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[PromoInterval]"
+                          length="16"
+                          lineageId="Package\EXTRACT\Source Store\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].Columns[PromoInterval]"
+                          name="PromoInterval"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Zeigt an, ob die Spalte die schnelleren gebietsschemaneutralen Analyseroutinen verwendet."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Gibt an, ob die Daten im Binärformat sind."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\EXTRACT\Source Store\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[Store]"
+                          dataType="i2"
+                          name="Store" />
+                        <externalMetadataColumn
+                          refId="Package\EXTRACT\Source Store\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[StoreType]"
+                          codePage="1252"
+                          dataType="str"
+                          length="1"
+                          name="StoreType" />
+                        <externalMetadataColumn
+                          refId="Package\EXTRACT\Source Store\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[Assortment]"
+                          codePage="1252"
+                          dataType="str"
+                          length="1"
+                          name="Assortment" />
+                        <externalMetadataColumn
+                          refId="Package\EXTRACT\Source Store\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[CompetitionDistance]"
+                          dataType="i4"
+                          name="CompetitionDistance" />
+                        <externalMetadataColumn
+                          refId="Package\EXTRACT\Source Store\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[CompetitionOpenSinceMonth]"
+                          dataType="i1"
+                          name="CompetitionOpenSinceMonth" />
+                        <externalMetadataColumn
+                          refId="Package\EXTRACT\Source Store\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[CompetitionOpenSinceYear]"
+                          dataType="i2"
+                          name="CompetitionOpenSinceYear" />
+                        <externalMetadataColumn
+                          refId="Package\EXTRACT\Source Store\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[Promo2]"
+                          dataType="i1"
+                          name="Promo2" />
+                        <externalMetadataColumn
+                          refId="Package\EXTRACT\Source Store\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[Promo2SinceWeek]"
+                          dataType="i1"
+                          name="Promo2SinceWeek" />
+                        <externalMetadataColumn
+                          refId="Package\EXTRACT\Source Store\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[Promo2SinceYear]"
+                          dataType="i2"
+                          name="Promo2SinceYear" />
+                        <externalMetadataColumn
+                          refId="Package\EXTRACT\Source Store\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[PromoInterval]"
+                          codePage="1252"
+                          dataType="str"
+                          length="16"
+                          name="PromoInterval" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\EXTRACT\Source Store\Flatfilequelle.Outputs[Fehlerausgabe der Flatfilequelle]"
+                      isErrorOut="true"
+                      name="Fehlerausgabe der Flatfilequelle">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\EXTRACT\Source Store\Flatfilequelle.Outputs[Fehlerausgabe der Flatfilequelle].Columns[Fehlerausgabespalte der Flatfilequelle]"
+                          codePage="1252"
+                          dataType="text"
+                          description="Fehlerausgabespalte der Flatfilequelle"
+                          lineageId="Package\EXTRACT\Source Store\Flatfilequelle.Outputs[Fehlerausgabe der Flatfilequelle].Columns[Fehlerausgabespalte der Flatfilequelle]"
+                          name="Fehlerausgabespalte der Flatfilequelle" />
+                        <outputColumn
+                          refId="Package\EXTRACT\Source Store\Flatfilequelle.Outputs[Fehlerausgabe der Flatfilequelle].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\EXTRACT\Source Store\Flatfilequelle.Outputs[Fehlerausgabe der Flatfilequelle].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\EXTRACT\Source Store\Flatfilequelle.Outputs[Fehlerausgabe der Flatfilequelle].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\EXTRACT\Source Store\Flatfilequelle.Outputs[Fehlerausgabe der Flatfilequelle].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\EXTRACT\Source Store\OLE DB-Ziel"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB-Ziel;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Alle Rechte vorbehalten; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB-Ziel"
+                  name="OLE DB-Ziel"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="Die Anzahl der Sekunden für das Timeout eines Befehls. Der Wert &quot;0&quot; zeigt einen unendlichen Timeoutwert an."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Gibt den Namen des zum Öffnen eines Rowsets verwendeten Datenbankobjekts an."
+                      name="OpenRowset">[sta].[cur_store]</property>
+                    <property
+                      dataType="System.String"
+                      description="Gibt die Variable an, die den Namen des zum Öffnen eines Rowsets verwendeten Datenbankobjekts enthält."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="Der auszuführende SQL-Befehl."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Gibt die zu verwendende Spaltencodepage an, wenn keine Codepageinformationen von der Datenquelle verfügbar sind."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Erzwingt die Verwendung des DefaultCodePage-Eigenschaftswerts beim Beschreiben von Zeichendaten."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Gibt den zum Zugreifen auf die Datenbank verwendeten Modus an."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Zeigt an, ob die für Identitätsspalten übergebenen Werte zum Ziel kopiert werden. Bei &quot;False&quot; werden die Werte für Identitätsspalten am Ziel automatisch generiert. Trifft nur zu, wenn die Option &quot;Schnelles Laden&quot; aktiviert ist."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Zeigt an, ob für Spalten, die NULL enthalten, NULL am Ziel eingefügt wird. Bei &quot;False&quot; werden für Spalten, die NULL enthalten, am Ziel die Standardwerte eingefügt. Trifft nur zu, wenn die Option &quot;Schnelles Laden&quot; aktiviert ist."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Gibt die für die Option &quot;Schnelles Laden&quot; zu verwendenden Optionen an. Trifft nur zu, wenn die Option &quot;Schnelles Laden&quot; aktiviert ist."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Gibt an, wann beim Einfügen von Daten Commits ausgegeben werden. Der Wert &quot;0&quot; gibt an, dass ein Commit am Ende des Einfügens von Daten ausgegeben wird. Trifft nur zu, wenn die Option &quot;Schnelles Laden&quot; aktiviert ist."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\EXTRACT\Source Store\OLE DB-Ziel.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[DESKTOP-P08T88H.rossmann]"
+                      connectionManagerRefId="Package.ConnectionManagers[DESKTOP-P08T88H.rossmann]"
+                      description="Die für den Zugriff auf die Datenbank verwendete OLE DB-Laufzeitverbindung."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\EXTRACT\Source Store\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels]"
+                      errorOrTruncationOperation="Einfügen"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="Eingabe des OLE DB-Ziels">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\EXTRACT\Source Store\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].Columns[Store]"
+                          cachedDataType="i2"
+                          cachedName="Store"
+                          externalMetadataColumnId="Package\EXTRACT\Source Store\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[Store]"
+                          lineageId="Package\EXTRACT\Source Store\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].Columns[Store]" />
+                        <inputColumn
+                          refId="Package\EXTRACT\Source Store\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].Columns[StoreType]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="1"
+                          cachedName="StoreType"
+                          externalMetadataColumnId="Package\EXTRACT\Source Store\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[StoreType]"
+                          lineageId="Package\EXTRACT\Source Store\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].Columns[StoreType]" />
+                        <inputColumn
+                          refId="Package\EXTRACT\Source Store\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].Columns[Assortment]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="1"
+                          cachedName="Assortment"
+                          externalMetadataColumnId="Package\EXTRACT\Source Store\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[Assortment]"
+                          lineageId="Package\EXTRACT\Source Store\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].Columns[Assortment]" />
+                        <inputColumn
+                          refId="Package\EXTRACT\Source Store\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].Columns[CompetitionDistance]"
+                          cachedDataType="i4"
+                          cachedName="CompetitionDistance"
+                          externalMetadataColumnId="Package\EXTRACT\Source Store\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[CompetitionDistance]"
+                          lineageId="Package\EXTRACT\Source Store\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].Columns[CompetitionDistance]" />
+                        <inputColumn
+                          refId="Package\EXTRACT\Source Store\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].Columns[CompetitionOpenSinceMonth]"
+                          cachedDataType="i1"
+                          cachedName="CompetitionOpenSinceMonth"
+                          externalMetadataColumnId="Package\EXTRACT\Source Store\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[CompetitionOpenSinceMonth]"
+                          lineageId="Package\EXTRACT\Source Store\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].Columns[CompetitionOpenSinceMonth]" />
+                        <inputColumn
+                          refId="Package\EXTRACT\Source Store\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].Columns[CompetitionOpenSinceYear]"
+                          cachedDataType="i2"
+                          cachedName="CompetitionOpenSinceYear"
+                          externalMetadataColumnId="Package\EXTRACT\Source Store\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[CompetitionOpenSinceYear]"
+                          lineageId="Package\EXTRACT\Source Store\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].Columns[CompetitionOpenSinceYear]" />
+                        <inputColumn
+                          refId="Package\EXTRACT\Source Store\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].Columns[Promo2]"
+                          cachedDataType="i1"
+                          cachedName="Promo2"
+                          externalMetadataColumnId="Package\EXTRACT\Source Store\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[Promo2]"
+                          lineageId="Package\EXTRACT\Source Store\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].Columns[Promo2]" />
+                        <inputColumn
+                          refId="Package\EXTRACT\Source Store\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].Columns[Promo2SinceWeek]"
+                          cachedDataType="i1"
+                          cachedName="Promo2SinceWeek"
+                          externalMetadataColumnId="Package\EXTRACT\Source Store\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[Promo2SinceWeek]"
+                          lineageId="Package\EXTRACT\Source Store\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].Columns[Promo2SinceWeek]" />
+                        <inputColumn
+                          refId="Package\EXTRACT\Source Store\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].Columns[Promo2SinceYear]"
+                          cachedDataType="i2"
+                          cachedName="Promo2SinceYear"
+                          externalMetadataColumnId="Package\EXTRACT\Source Store\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[Promo2SinceYear]"
+                          lineageId="Package\EXTRACT\Source Store\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].Columns[Promo2SinceYear]" />
+                        <inputColumn
+                          refId="Package\EXTRACT\Source Store\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].Columns[PromoInterval]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="16"
+                          cachedName="PromoInterval"
+                          externalMetadataColumnId="Package\EXTRACT\Source Store\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[PromoInterval]"
+                          lineageId="Package\EXTRACT\Source Store\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].Columns[PromoInterval]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\EXTRACT\Source Store\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[Store]"
+                          dataType="i2"
+                          name="Store" />
+                        <externalMetadataColumn
+                          refId="Package\EXTRACT\Source Store\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[StoreType]"
+                          codePage="1252"
+                          dataType="str"
+                          length="1"
+                          name="StoreType" />
+                        <externalMetadataColumn
+                          refId="Package\EXTRACT\Source Store\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[Assortment]"
+                          codePage="1252"
+                          dataType="str"
+                          length="1"
+                          name="Assortment" />
+                        <externalMetadataColumn
+                          refId="Package\EXTRACT\Source Store\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[CompetitionDistance]"
+                          dataType="i4"
+                          name="CompetitionDistance" />
+                        <externalMetadataColumn
+                          refId="Package\EXTRACT\Source Store\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[CompetitionOpenSinceMonth]"
+                          dataType="i2"
+                          name="CompetitionOpenSinceMonth" />
+                        <externalMetadataColumn
+                          refId="Package\EXTRACT\Source Store\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[CompetitionOpenSinceYear]"
+                          dataType="i2"
+                          name="CompetitionOpenSinceYear" />
+                        <externalMetadataColumn
+                          refId="Package\EXTRACT\Source Store\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[Promo2]"
+                          dataType="i2"
+                          name="Promo2" />
+                        <externalMetadataColumn
+                          refId="Package\EXTRACT\Source Store\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[Promo2SinceWeek]"
+                          dataType="i2"
+                          name="Promo2SinceWeek" />
+                        <externalMetadataColumn
+                          refId="Package\EXTRACT\Source Store\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[Promo2SinceYear]"
+                          dataType="i2"
+                          name="Promo2SinceYear" />
+                        <externalMetadataColumn
+                          refId="Package\EXTRACT\Source Store\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[PromoInterval]"
+                          codePage="1252"
+                          dataType="str"
+                          length="16"
+                          name="PromoInterval" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\EXTRACT\Source Store\OLE DB-Ziel.Outputs[Fehlerausgabe des OLE DB-Ziels]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Fehlerausgabe des OLE DB-Ziels"
+                      synchronousInputId="Package\EXTRACT\Source Store\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\EXTRACT\Source Store\OLE DB-Ziel.Outputs[Fehlerausgabe des OLE DB-Ziels].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\EXTRACT\Source Store\OLE DB-Ziel.Outputs[Fehlerausgabe des OLE DB-Ziels].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\EXTRACT\Source Store\OLE DB-Ziel.Outputs[Fehlerausgabe des OLE DB-Ziels].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\EXTRACT\Source Store\OLE DB-Ziel.Outputs[Fehlerausgabe des OLE DB-Ziels].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\EXTRACT\Source Store.Paths[Ausgabe der Flatfilequelle]"
+                  endId="Package\EXTRACT\Source Store\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels]"
+                  name="Ausgabe der Flatfilequelle"
+                  startId="Package\EXTRACT\Source Store\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\EXTRACT\Source Train"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Datenflusstask"
+          DTS:DTSID="{734E40EC-AA10-44F9-A8CB-C8425732F2A4}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Source Train"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\EXTRACT\Source Train\Flatfilequelle"
+                  componentClassID="Microsoft.FlatFileSource"
+                  contactInfo="Flatfilequelle;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Alle Rechte vorbehalten; http://www.microsoft.com/sql/support;1"
+                  description="Flatfilequelle"
+                  localeId="3079"
+                  name="Flatfilequelle"
+                  usesDispositions="true"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Gibt an, ob Spalten mit der Länge &quot;0&quot; als NULL behandelt werden."
+                      name="RetainNulls">true</property>
+                    <property
+                      dataType="System.String"
+                      description="Gibt den Namen der Ausgabespalte an, die den Dateinamen enthält. Wenn kein Name angegeben wird, wird keine Ausgabespalte generiert, die den Dateinamen enthält."
+                      name="FileNameColumnName"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\EXTRACT\Source Train\Flatfilequelle.Connections[FlatFileConnection]"
+                      connectionManagerID="Package.ConnectionManagers[train.csv Connection Manager]"
+                      connectionManagerRefId="Package.ConnectionManagers[train.csv Connection Manager]"
+                      name="FlatFileConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\EXTRACT\Source Train\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle]"
+                      name="Ausgabe der Flatfilequelle">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\EXTRACT\Source Train\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].Columns[Store]"
+                          dataType="i2"
+                          errorOrTruncationOperation="Konvertierung"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\EXTRACT\Source Train\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[Store]"
+                          lineageId="Package\EXTRACT\Source Train\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].Columns[Store]"
+                          name="Store"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Zeigt an, ob die Spalte die schnelleren gebietsschemaneutralen Analyseroutinen verwendet."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Gibt an, ob die Daten im Binärformat sind."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\EXTRACT\Source Train\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].Columns[DayOfWeek]"
+                          dataType="i1"
+                          errorOrTruncationOperation="Konvertierung"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\EXTRACT\Source Train\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[DayOfWeek]"
+                          lineageId="Package\EXTRACT\Source Train\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].Columns[DayOfWeek]"
+                          name="DayOfWeek"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Zeigt an, ob die Spalte die schnelleren gebietsschemaneutralen Analyseroutinen verwendet."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Gibt an, ob die Daten im Binärformat sind."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\EXTRACT\Source Train\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].Columns[Date]"
+                          dataType="date"
+                          errorOrTruncationOperation="Konvertierung"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\EXTRACT\Source Train\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[Date]"
+                          lineageId="Package\EXTRACT\Source Train\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].Columns[Date]"
+                          name="Date"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Zeigt an, ob die Spalte die schnelleren gebietsschemaneutralen Analyseroutinen verwendet."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Gibt an, ob die Daten im Binärformat sind."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\EXTRACT\Source Train\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].Columns[Sales]"
+                          dataType="i8"
+                          errorOrTruncationOperation="Konvertierung"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\EXTRACT\Source Train\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[Sales]"
+                          lineageId="Package\EXTRACT\Source Train\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].Columns[Sales]"
+                          name="Sales"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Zeigt an, ob die Spalte die schnelleren gebietsschemaneutralen Analyseroutinen verwendet."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Gibt an, ob die Daten im Binärformat sind."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\EXTRACT\Source Train\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].Columns[Customers]"
+                          dataType="i2"
+                          errorOrTruncationOperation="Konvertierung"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\EXTRACT\Source Train\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[Customers]"
+                          lineageId="Package\EXTRACT\Source Train\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].Columns[Customers]"
+                          name="Customers"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Zeigt an, ob die Spalte die schnelleren gebietsschemaneutralen Analyseroutinen verwendet."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Gibt an, ob die Daten im Binärformat sind."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\EXTRACT\Source Train\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].Columns[Open]"
+                          dataType="i1"
+                          errorOrTruncationOperation="Konvertierung"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\EXTRACT\Source Train\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[Open]"
+                          lineageId="Package\EXTRACT\Source Train\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].Columns[Open]"
+                          name="Open"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Zeigt an, ob die Spalte die schnelleren gebietsschemaneutralen Analyseroutinen verwendet."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Gibt an, ob die Daten im Binärformat sind."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\EXTRACT\Source Train\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].Columns[Promo]"
+                          dataType="i1"
+                          errorOrTruncationOperation="Konvertierung"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\EXTRACT\Source Train\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[Promo]"
+                          lineageId="Package\EXTRACT\Source Train\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].Columns[Promo]"
+                          name="Promo"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Zeigt an, ob die Spalte die schnelleren gebietsschemaneutralen Analyseroutinen verwendet."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Gibt an, ob die Daten im Binärformat sind."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\EXTRACT\Source Train\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].Columns[StateHoliday]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Konvertierung"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\EXTRACT\Source Train\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[StateHoliday]"
+                          length="50"
+                          lineageId="Package\EXTRACT\Source Train\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].Columns[StateHoliday]"
+                          name="StateHoliday"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Zeigt an, ob die Spalte die schnelleren gebietsschemaneutralen Analyseroutinen verwendet."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Gibt an, ob die Daten im Binärformat sind."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\EXTRACT\Source Train\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].Columns[SchoolHoliday]"
+                          dataType="i1"
+                          errorOrTruncationOperation="Konvertierung"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\EXTRACT\Source Train\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[SchoolHoliday]"
+                          lineageId="Package\EXTRACT\Source Train\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].Columns[SchoolHoliday]"
+                          name="SchoolHoliday"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Zeigt an, ob die Spalte die schnelleren gebietsschemaneutralen Analyseroutinen verwendet."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Gibt an, ob die Daten im Binärformat sind."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\EXTRACT\Source Train\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[Store]"
+                          dataType="i2"
+                          name="Store" />
+                        <externalMetadataColumn
+                          refId="Package\EXTRACT\Source Train\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[DayOfWeek]"
+                          dataType="i1"
+                          name="DayOfWeek" />
+                        <externalMetadataColumn
+                          refId="Package\EXTRACT\Source Train\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[Date]"
+                          dataType="date"
+                          name="Date" />
+                        <externalMetadataColumn
+                          refId="Package\EXTRACT\Source Train\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[Sales]"
+                          dataType="i8"
+                          name="Sales" />
+                        <externalMetadataColumn
+                          refId="Package\EXTRACT\Source Train\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[Customers]"
+                          dataType="i2"
+                          name="Customers" />
+                        <externalMetadataColumn
+                          refId="Package\EXTRACT\Source Train\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[Open]"
+                          dataType="i1"
+                          name="Open" />
+                        <externalMetadataColumn
+                          refId="Package\EXTRACT\Source Train\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[Promo]"
+                          dataType="i1"
+                          name="Promo" />
+                        <externalMetadataColumn
+                          refId="Package\EXTRACT\Source Train\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[StateHoliday]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="StateHoliday" />
+                        <externalMetadataColumn
+                          refId="Package\EXTRACT\Source Train\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[SchoolHoliday]"
+                          dataType="i1"
+                          name="SchoolHoliday" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\EXTRACT\Source Train\Flatfilequelle.Outputs[Fehlerausgabe der Flatfilequelle]"
+                      isErrorOut="true"
+                      name="Fehlerausgabe der Flatfilequelle">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\EXTRACT\Source Train\Flatfilequelle.Outputs[Fehlerausgabe der Flatfilequelle].Columns[Fehlerausgabespalte der Flatfilequelle]"
+                          codePage="1252"
+                          dataType="text"
+                          description="Fehlerausgabespalte der Flatfilequelle"
+                          lineageId="Package\EXTRACT\Source Train\Flatfilequelle.Outputs[Fehlerausgabe der Flatfilequelle].Columns[Fehlerausgabespalte der Flatfilequelle]"
+                          name="Fehlerausgabespalte der Flatfilequelle" />
+                        <outputColumn
+                          refId="Package\EXTRACT\Source Train\Flatfilequelle.Outputs[Fehlerausgabe der Flatfilequelle].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\EXTRACT\Source Train\Flatfilequelle.Outputs[Fehlerausgabe der Flatfilequelle].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\EXTRACT\Source Train\Flatfilequelle.Outputs[Fehlerausgabe der Flatfilequelle].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\EXTRACT\Source Train\Flatfilequelle.Outputs[Fehlerausgabe der Flatfilequelle].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\EXTRACT\Source Train\OLE DB-Ziel"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB-Ziel;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Alle Rechte vorbehalten; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB-Ziel"
+                  name="OLE DB-Ziel"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="Die Anzahl der Sekunden für das Timeout eines Befehls. Der Wert &quot;0&quot; zeigt einen unendlichen Timeoutwert an."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Gibt den Namen des zum Öffnen eines Rowsets verwendeten Datenbankobjekts an."
+                      name="OpenRowset">[sta].[cur_train]</property>
+                    <property
+                      dataType="System.String"
+                      description="Gibt die Variable an, die den Namen des zum Öffnen eines Rowsets verwendeten Datenbankobjekts enthält."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="Der auszuführende SQL-Befehl."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Gibt die zu verwendende Spaltencodepage an, wenn keine Codepageinformationen von der Datenquelle verfügbar sind."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Erzwingt die Verwendung des DefaultCodePage-Eigenschaftswerts beim Beschreiben von Zeichendaten."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Gibt den zum Zugreifen auf die Datenbank verwendeten Modus an."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Zeigt an, ob die für Identitätsspalten übergebenen Werte zum Ziel kopiert werden. Bei &quot;False&quot; werden die Werte für Identitätsspalten am Ziel automatisch generiert. Trifft nur zu, wenn die Option &quot;Schnelles Laden&quot; aktiviert ist."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Zeigt an, ob für Spalten, die NULL enthalten, NULL am Ziel eingefügt wird. Bei &quot;False&quot; werden für Spalten, die NULL enthalten, am Ziel die Standardwerte eingefügt. Trifft nur zu, wenn die Option &quot;Schnelles Laden&quot; aktiviert ist."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Gibt die für die Option &quot;Schnelles Laden&quot; zu verwendenden Optionen an. Trifft nur zu, wenn die Option &quot;Schnelles Laden&quot; aktiviert ist."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Gibt an, wann beim Einfügen von Daten Commits ausgegeben werden. Der Wert &quot;0&quot; gibt an, dass ein Commit am Ende des Einfügens von Daten ausgegeben wird. Trifft nur zu, wenn die Option &quot;Schnelles Laden&quot; aktiviert ist."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\EXTRACT\Source Train\OLE DB-Ziel.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[DESKTOP-P08T88H.rossmann]"
+                      connectionManagerRefId="Package.ConnectionManagers[DESKTOP-P08T88H.rossmann]"
+                      description="Die für den Zugriff auf die Datenbank verwendete OLE DB-Laufzeitverbindung."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\EXTRACT\Source Train\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels]"
+                      errorOrTruncationOperation="Einfügen"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="Eingabe des OLE DB-Ziels">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\EXTRACT\Source Train\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].Columns[Store]"
+                          cachedDataType="i2"
+                          cachedName="Store"
+                          externalMetadataColumnId="Package\EXTRACT\Source Train\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[Store]"
+                          lineageId="Package\EXTRACT\Source Train\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].Columns[Store]" />
+                        <inputColumn
+                          refId="Package\EXTRACT\Source Train\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].Columns[DayOfWeek]"
+                          cachedDataType="i1"
+                          cachedName="DayOfWeek"
+                          externalMetadataColumnId="Package\EXTRACT\Source Train\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[DayOfWeek]"
+                          lineageId="Package\EXTRACT\Source Train\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].Columns[DayOfWeek]" />
+                        <inputColumn
+                          refId="Package\EXTRACT\Source Train\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].Columns[Date]"
+                          cachedDataType="date"
+                          cachedName="Date"
+                          externalMetadataColumnId="Package\EXTRACT\Source Train\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[Date]"
+                          lineageId="Package\EXTRACT\Source Train\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].Columns[Date]" />
+                        <inputColumn
+                          refId="Package\EXTRACT\Source Train\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].Columns[Sales]"
+                          cachedDataType="i8"
+                          cachedName="Sales"
+                          externalMetadataColumnId="Package\EXTRACT\Source Train\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[Sales]"
+                          lineageId="Package\EXTRACT\Source Train\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].Columns[Sales]" />
+                        <inputColumn
+                          refId="Package\EXTRACT\Source Train\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].Columns[Customers]"
+                          cachedDataType="i2"
+                          cachedName="Customers"
+                          externalMetadataColumnId="Package\EXTRACT\Source Train\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[Customers]"
+                          lineageId="Package\EXTRACT\Source Train\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].Columns[Customers]" />
+                        <inputColumn
+                          refId="Package\EXTRACT\Source Train\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].Columns[Open]"
+                          cachedDataType="i1"
+                          cachedName="Open"
+                          externalMetadataColumnId="Package\EXTRACT\Source Train\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[Open]"
+                          lineageId="Package\EXTRACT\Source Train\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].Columns[Open]" />
+                        <inputColumn
+                          refId="Package\EXTRACT\Source Train\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].Columns[Promo]"
+                          cachedDataType="i1"
+                          cachedName="Promo"
+                          externalMetadataColumnId="Package\EXTRACT\Source Train\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[Promo]"
+                          lineageId="Package\EXTRACT\Source Train\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].Columns[Promo]" />
+                        <inputColumn
+                          refId="Package\EXTRACT\Source Train\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].Columns[StateHoliday]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="StateHoliday"
+                          externalMetadataColumnId="Package\EXTRACT\Source Train\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[StateHoliday]"
+                          lineageId="Package\EXTRACT\Source Train\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].Columns[StateHoliday]" />
+                        <inputColumn
+                          refId="Package\EXTRACT\Source Train\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].Columns[SchoolHoliday]"
+                          cachedDataType="i1"
+                          cachedName="SchoolHoliday"
+                          externalMetadataColumnId="Package\EXTRACT\Source Train\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[SchoolHoliday]"
+                          lineageId="Package\EXTRACT\Source Train\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].Columns[SchoolHoliday]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\EXTRACT\Source Train\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[Store]"
+                          dataType="i2"
+                          name="Store" />
+                        <externalMetadataColumn
+                          refId="Package\EXTRACT\Source Train\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[DayOfWeek]"
+                          dataType="i2"
+                          name="DayOfWeek" />
+                        <externalMetadataColumn
+                          refId="Package\EXTRACT\Source Train\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[Date]"
+                          dataType="dbTimeStamp"
+                          name="Date" />
+                        <externalMetadataColumn
+                          refId="Package\EXTRACT\Source Train\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[Sales]"
+                          dataType="i8"
+                          name="Sales" />
+                        <externalMetadataColumn
+                          refId="Package\EXTRACT\Source Train\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[Customers]"
+                          dataType="i2"
+                          name="Customers" />
+                        <externalMetadataColumn
+                          refId="Package\EXTRACT\Source Train\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[Open]"
+                          dataType="i2"
+                          name="Open" />
+                        <externalMetadataColumn
+                          refId="Package\EXTRACT\Source Train\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[Promo]"
+                          dataType="i2"
+                          name="Promo" />
+                        <externalMetadataColumn
+                          refId="Package\EXTRACT\Source Train\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[StateHoliday]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="StateHoliday" />
+                        <externalMetadataColumn
+                          refId="Package\EXTRACT\Source Train\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[SchoolHoliday]"
+                          dataType="i2"
+                          name="SchoolHoliday" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\EXTRACT\Source Train\OLE DB-Ziel.Outputs[Fehlerausgabe des OLE DB-Ziels]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Fehlerausgabe des OLE DB-Ziels"
+                      synchronousInputId="Package\EXTRACT\Source Train\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\EXTRACT\Source Train\OLE DB-Ziel.Outputs[Fehlerausgabe des OLE DB-Ziels].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\EXTRACT\Source Train\OLE DB-Ziel.Outputs[Fehlerausgabe des OLE DB-Ziels].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\EXTRACT\Source Train\OLE DB-Ziel.Outputs[Fehlerausgabe des OLE DB-Ziels].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\EXTRACT\Source Train\OLE DB-Ziel.Outputs[Fehlerausgabe des OLE DB-Ziels].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\EXTRACT\Source Train.Paths[Ausgabe der Flatfilequelle]"
+                  endId="Package\EXTRACT\Source Train\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels]"
+                  name="Ausgabe der Flatfilequelle"
+                  startId="Package\EXTRACT\Source Train\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\EXTRACT\Stage Store"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Task &quot;SQL ausführen&quot;"
+          DTS:DTSID="{281CC86B-6D33-4F23-87B5-003F164AD0B6}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Stage Store"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{E3B41021-7B21-4A48-8888-242590BEDCE6}"
+              SQLTask:SqlStatementSource="-- Store&#xA;if exists(select * from sys.tables t inner join sys.schemas s on t.schema_id=s.schema_id where s.name='sta' and t.name='prev_store')&#xA;begin&#xA;&#xA;  select * into sta.store from sta.cur_store&#xA;  except&#xA;  select * from sta.prev_store;&#xA;&#xA;end else begin&#xA;&#xA;  select * into sta.store from sta.cur_store;&#xA;&#xA;end;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\EXTRACT\Stage Train"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Task &quot;SQL ausführen&quot;"
+          DTS:DTSID="{B2CC66AB-0B22-4305-B894-C86AECB9D912}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Stage Train"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{E3B41021-7B21-4A48-8888-242590BEDCE6}"
+              SQLTask:SqlStatementSource="-- Train&#xA;if exists(select * from sys.tables t inner join sys.schemas s on t.schema_id=s.schema_id where s.name='sta' and t.name='prev_train')&#xA;begin&#xA;&#xA;  select * into sta.train from sta.cur_train&#xA;  except&#xA;  select * from sta.prev_train;&#xA;&#xA;end else begin&#xA;&#xA;  select * into sta.train from sta.cur_train;&#xA;&#xA;end;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\EXTRACT.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{D2007261-1F72-4339-BB78-AE00C3387D86}"
+          DTS:From="Package\EXTRACT\Source Store"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\EXTRACT\Stage Store" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\EXTRACT.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{CC67AE4C-CB02-49B9-9BA6-5D3445F84F65}"
+          DTS:From="Package\EXTRACT\Source Train"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\EXTRACT\Stage Train" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\LOAD"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequenzcontainer"
+      DTS:DTSID="{50BBB2D3-D648-4E47-84F6-EB9EA459F675}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="LOAD">
+      <DTS:Variables />
+      <DTS:Executables />
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\POSTPROCESS - Shift staging area"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Task &quot;SQL ausführen&quot;"
+      DTS:DTSID="{3E8F74C0-DE0F-4899-BEEE-9B3737BC441C}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="POSTPROCESS - Shift staging area"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{E3B41021-7B21-4A48-8888-242590BEDCE6}"
+          SQLTask:SqlStatementSource="-- Full extract for store&#xA;---- Delete sta.prev_store, if any&#xA;if exists(select * from sys.tables t inner join sys.schemas s on t.schema_id=s.schema_id where s.name='sta' and t.name='prev_store') drop table sta.prev_store;&#xA;&#xA;---- Rename sta.cur_store to sta.prev_store, if any&#xA;if exists(select * from sys.tables t inner join sys.schemas s on t.schema_id=s.schema_id where s.name='sta' and t.name='cur_store') exec sp_rename 'sta.cur_store', 'prev_store'&#xA;&#xA;-- Full extract for train&#xA;---- Delete sta.prev_train, if any&#xA;if exists(select * from sys.tables t inner join sys.schemas s on t.schema_id=s.schema_id where s.name='sta' and t.name='prev_train') drop table sta.prev_train;&#xA;&#xA;---- Rename sta.cur_store to sta.prev_train, if any&#xA;if exists(select * from sys.tables t inner join sys.schemas s on t.schema_id=s.schema_id where s.name='sta' and t.name='cur_train') exec sp_rename 'sta.cur_train', 'prev_train'&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\PREPROCESS - Cleanup staging area"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Task &quot;SQL ausführen&quot;"
+      DTS:DTSID="{E8F66F6F-15B5-4E56-8C1B-B583F23F2203}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="PREPROCESS - Cleanup staging area"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{E3B41021-7B21-4A48-8888-242590BEDCE6}"
+          SQLTask:SqlStatementSource="-- Full extract for store&#xA;---- Delete sta.store, if any&#xA;if exists(select * from sys.tables t inner join sys.schemas s on t.schema_id=s.schema_id where s.name='sta' and t.name='store') drop table sta.store;&#xA;&#xA;---- Delete sta.cur_store, if any&#xA;if exists(select * from sys.tables t inner join sys.schemas s on t.schema_id=s.schema_id where s.name='sta' and t.name='cur_store') drop table sta.cur_store;&#xA;&#xA;-- Full extract for train&#xA;---- Delete sta.train, if any&#xA;if exists(select * from sys.tables t inner join sys.schemas s on t.schema_id=s.schema_id where s.name='sta' and t.name='train') drop table sta.store;&#xA;&#xA;---- Delete sta.cur_train, if any&#xA;if exists(select * from sys.tables t inner join sys.schemas s on t.schema_id=s.schema_id where s.name='sta' and t.name='cur_train') drop table sta.cur_train;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\TRANSFORM"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequenzcontainer"
+      DTS:DTSID="{1150385A-3E81-447F-97DB-FD20AC60549F}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="TRANSFORM">
+      <DTS:Variables />
+      <DTS:Executables />
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{5227704C-86FF-46AD-892C-75FCD69DF88F}"
+      DTS:From="Package\PREPROCESS - Cleanup staging area"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\EXTRACT" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{D5FA03C6-F311-432B-9B3C-0E568E4B869D}"
+      DTS:From="Package\EXTRACT"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\TRANSFORM" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{109A594D-4538-4FEE-95BC-B5CA0E01CD5A}"
+      DTS:From="Package\TRANSFORM"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\LOAD" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{05DCC2D3-CAFB-412F-85DA-4426EFFBA902}"
+      DTS:From="Package\LOAD"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 3"
+      DTS:To="Package\POSTPROCESS - Shift staging area" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="137.6,41.6"
+          Id="Package\EXTRACT\Source Train"
+          TopLeft="276.541666625275,42.9833331353135" />
+        <NodeLayout
+          Size="132,41.6"
+          Id="Package\EXTRACT\Stage Train"
+          TopLeft="272.41666575604,119.70000098149" />
+        <EdgeLayout
+          Id="Package\EXTRACT.PrecedenceConstraints[Constraint 1]"
+          TopLeft="341.879166190657,84.5833331353135">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,35.1166678461762"
+              Start="0,0"
+              End="0,27.6166678461762">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.6166678461762" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="139.2,41.6"
+          Id="Package\EXTRACT\Source Store"
+          TopLeft="51.3416666252746,42.9833331353135" />
+        <NodeLayout
+          Size="132.8,41.6"
+          Id="Package\EXTRACT\Stage Store"
+          TopLeft="54.4999990065894,123.616668672694" />
+        <EdgeLayout
+          Id="Package\EXTRACT.PrecedenceConstraints[Constraint]"
+          TopLeft="120.920832815932,84.5833331353135">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,39.0333355373806"
+              Start="0,0"
+              End="0,31.5333355373806">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.5333355373806" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="474.4,219.2"
+          Size="474.4,262.4"
+          Id="Package\EXTRACT"
+          TopLeft="225.531030905539,131.110860276333" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="204.8,55.2"
+          Size="204.8,98.4"
+          Id="Package\TRANSFORM"
+          TopLeft="360.331030905539,463.379464504307" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="204.8,55.2"
+          Size="204.8,98.4"
+          Id="Package\LOAD"
+          TopLeft="360.331030905539,631.648068732281" />
+        <NodeLayout
+          Size="258.4,41.6"
+          Id="Package\PREPROCESS - Cleanup staging area"
+          TopLeft="333.531030905539,19.6422560483585" />
+        <NodeLayout
+          Size="247.2,41.6"
+          Id="Package\POSTPROCESS - Shift staging area"
+          TopLeft="339.131030905539,799.916672960255" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="462.731030905539,61.2422560483585">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,69.8686042279742"
+              Start="0,0"
+              End="0,62.3686042279742">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,62.3686042279742" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="462.731030905539,393.510860276333">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,69.8686042279742"
+              Start="0,0"
+              End="0,62.3686042279742">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,62.3686042279742" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="462.731030905539,561.779464504307">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,69.8686042279743"
+              Start="0,0"
+              End="0,62.3686042279743">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,62.3686042279743" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="462.731030905539,730.048068732281">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,69.8686042279743"
+              Start="0,0"
+              End="0,62.3686042279743">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,62.3686042279743" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\EXTRACT\Source Train">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="136.8,41.6"
+          Id="Package\EXTRACT\Source Train\Flatfilequelle"
+          TopLeft="405,141" />
+        <NodeLayout
+          Size="136.8,41.6"
+          Id="Package\EXTRACT\Source Train\OLE DB-Ziel"
+          TopLeft="403,228" />
+        <EdgeLayout
+          Id="Package\EXTRACT\Source Train.Paths[Ausgabe der Flatfilequelle]"
+          TopLeft="472.4,182.6">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,45.4000000000001"
+              Start="0,0"
+              End="0,37.9000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37.9000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <TaskHost
+    design-time-name="Package\EXTRACT\Source Store">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="136.8,41.6"
+          Id="Package\EXTRACT\Source Store\Flatfilequelle"
+          TopLeft="227,220" />
+        <NodeLayout
+          Size="136.8,41.6"
+          Id="Package\EXTRACT\Source Store\OLE DB-Ziel"
+          TopLeft="228,322" />
+        <EdgeLayout
+          Id="Package\EXTRACT\Source Store.Paths[Ausgabe der Flatfilequelle]"
+          TopLeft="295.9,261.6">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60.4"
+              Start="0,0"
+              End="0,52.9">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.9" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\EXTRACT\Source Train\OLE DB-Ziel">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\EXTRACT\Source Store\OLE DB-Ziel">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
